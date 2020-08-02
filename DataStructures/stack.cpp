@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstdlib>
 
 
 using namespace std;
@@ -61,6 +60,9 @@ int main() {
 }
 
 
+/*
+ * Push Element into the Stack
+ */
 node *stack_list::push(node *top, int item) {
     node *tmp;
     tmp = new (struct node);
@@ -71,6 +73,9 @@ node *stack_list::push(node *top, int item) {
 }
 
 
+/*
+ * Pop Element from the Stack
+ */
 node *stack_list::pop(node *top)
 {
     node *tmp;
@@ -86,6 +91,9 @@ node *stack_list::pop(node *top)
 }
 
 
+/*
+ * Traverse the Stack
+ */
 void stack_list::traverse(node *top) {
     node *ptr;
     ptr = top;
