@@ -22,7 +22,7 @@ class stack_list {
 
 
 int main() {
-    int choice, item;
+    int choice;
     stack_list sl;
 
     while (1) {
@@ -37,6 +37,8 @@ int main() {
         cin >> choice;
         switch(choice) {
             case 1: {
+                int item;
+
                 cout << "Enter value to be pushed into the stack: ";
                 cin >> item;
                 top = sl.push(top, item);

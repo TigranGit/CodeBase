@@ -26,7 +26,7 @@ class linked_list {
 
 
 main() {
-    int choice, nodes, element, position, i;
+    int choice,  i;
     linked_list sl;
     start = NULL;
 
@@ -131,7 +131,7 @@ void linked_list::insert_begin(int value) {
         start = temp;
         start->next = p;
     }
-    cout << "Element Inserted at beginning" << endl;
+    cout << "Element inserted at the beginning" << endl;
 }
 
 
@@ -154,7 +154,6 @@ void linked_list::insert_last(int value) {
  * Insert Node at the given position
  */
 void linked_list::insert_pos(int pos, int value) {
-    int counter = 0;
     int i;
     struct node *temp, *s, *ptr;
     temp = create_node(value);
@@ -163,14 +162,12 @@ void linked_list::insert_pos(int pos, int value) {
         if (start == NULL) {
             start = temp;
             start->next = NULL;
-        }
-        else {
+        } else {
             ptr = start;
             start = temp;
             start->next = ptr;
         }
-    }
-    else {
+    } else {
         s = start;
         for (i = 1; i < pos; i++) {
             ptr = s;
@@ -190,7 +187,6 @@ void linked_list::insert_pos(int pos, int value) {
  * Delete element at the given position
  */
 void linked_list::delete_pos(int pos) {
-    int counter = 0;
     int i;
     struct node *s, *ptr;
     s = start;
@@ -198,23 +194,19 @@ void linked_list::delete_pos(int pos) {
         start = s->next;
     }
     else {
-        while (s != NULL) {
+        s = start;
+        for (i = 1; i < pos; i++) {
+            ptr = s;
             s = s->next;
-            counter++;
-        }
-        if (pos > 0 && pos <= counter) {
-            s = start;
-            for (i = 1;i < pos;i++) {
-                ptr = s;
-                s = s->next;
+            if (s == NULL) {
+                cout << "Positon out of range" << endl;
+                return;
             }
-            ptr->next = s->next;
         }
-        else {
-            cout << "Position out of range" << endl;
-        }
+        ptr->next = s->next;
+
         free(s);
-        cout << "Element Deleted" << endl;
+        cout << "Element has been deleted" << endl;
     }
 }
 
