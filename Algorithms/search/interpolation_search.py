@@ -1,6 +1,3 @@
-from quick_sort import quick_sort
-
-
 def interpolation_search(arr, x):
     low = 0
     high = len(arr) - 1
@@ -17,5 +14,5 @@ def interpolation_search(arr, x):
 
 if __name__ == "__main__":
     my_list = [1, 4, 2, 6, 134, 2, 64, 12, 634]
-    my_list = quick_sort(my_list)
+    my_list = sorted(my_list)
     print(interpolation_search(my_list, 64))
