@@ -26,7 +26,7 @@ class queue {
 };
 
 
-main() {
+int main() {
     int choice;
     queue my_queue;
 
@@ -67,6 +67,7 @@ main() {
             }
         }
     }
+    return 0;
 }
 
 

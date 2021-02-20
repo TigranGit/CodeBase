@@ -25,7 +25,7 @@ class linked_list {
 };
 
 
-main() {
+int main() {
     int choice,  i;
     linked_list sl;
     start = NULL;
@@ -95,6 +95,7 @@ main() {
             }
         }
     }
+    return 0;
 }
 
 
