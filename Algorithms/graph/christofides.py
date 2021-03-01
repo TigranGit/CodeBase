@@ -89,7 +89,7 @@ def bipartite_graph(M, bipartite_set, odd_vertices):
 	return [bipartite_graphs, vertex_sets]
 
 
-def main():
+if __name__ == "__main__":
     array = [
         (0, 200, 800),
         (1, 3600, 2300),
@@ -120,7 +120,3 @@ def main():
     bipartite_set = [set(i) for i in itertools.combinations(set(odd_vertices), int(len(odd_vertices)/2))]
     bipartite_graphs = bipartite_graph(mst.graph, bipartite_set, odd_vertices)
     print(bipartite_graphs)
-
-
-if __name__ == "__main__":
-    main()
