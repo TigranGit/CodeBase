@@ -14,7 +14,7 @@ default_edges = [
     ("D", "F", 6),
     ("E", "F", 8),
     ("E", "G", 9),
-    ("F", "G", 11)
+    ("F", "G", 11),
 ]
 
 
@@ -26,18 +26,19 @@ def test_dijkstra_single():
     path = dijkstra.find_path(prev, "E")
 
     assert d == 14
-    assert path == ['A', 'B', 'E']
+    assert path == ["A", "B", "E"]
 
 
 expected_result = {
-    "C": (15, ['A', 'B', 'C']),
-    "E": (14, ['A', 'B', 'E']),
-    "F": (11, ['A', 'D', 'F']),
-    "B": (7, ['A', 'B']),
-    "G": (22, ['A', 'D', 'F', 'G']),
-    "A": (0, ['A']),
-    "D": (5, ['A', 'D'])
+    "C": (15, ["A", "B", "C"]),
+    "E": (14, ["A", "B", "E"]),
+    "F": (11, ["A", "D", "F"]),
+    "B": (7, ["A", "B"]),
+    "G": (22, ["A", "D", "F", "G"]),
+    "A": (0, ["A"]),
+    "D": (5, ["A", "D"]),
 }
+
 
 @pytest.mark.parametrize("expected_result", [expected_result])
 def test_dijkstra_all(expected_result):

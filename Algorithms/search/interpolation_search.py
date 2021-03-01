@@ -6,9 +6,9 @@ def interpolation_search(arr, x):
         if arr[index] == x:
             return index
         if arr[index] < x:
-            low = index + 1;
+            low = index + 1
         else:
-            high = index - 1;
+            high = index - 1
     return -1
 
 

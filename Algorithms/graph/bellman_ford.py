@@ -4,11 +4,9 @@ import numpy as np
 class Bellman_Ford:
     graph = None
 
-
     def __init__(self, edge_list):
         self.graph = edge_list
         self.graph_length = len(edge_list)
-
 
     def bellman_ford(self, src):
         graph = np.array(self.graph)
@@ -40,7 +38,7 @@ if __name__ == "__main__":
         ("D", "F", 6),
         ("E", "F", 8),
         ("E", "G", 9),
-        ("F", "G", 11)
+        ("F", "G", 11),
     ]
 
     bellman_ford = Bellman_Ford(edges)

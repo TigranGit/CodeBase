@@ -4,23 +4,22 @@ from collections import defaultdict
 class Dijkstra:
     graph = None
 
-
     def __init__(self, edge_list, directed=False):
         self.edge_list = edge_list
         self.directed = directed
-
 
     def build_graph(self):
         self.graph = defaultdict(list)
         seen_edges = defaultdict(int)
         for src, dst, weight in self.edge_list:
             seen_edges[(src, dst, weight)] += 1
-            if seen_edges[(src, dst, weight)] > 1:  # checking for duplicated edge entries
+            if (
+                seen_edges[(src, dst, weight)] > 1
+            ):  # checking for duplicated edge entries
                 continue
             self.graph[src].append((dst, weight))
             if not self.directed:
                 self.graph[dst].append((src, weight))
-
 
     def dijkstra(self, src, dst=None):
         nodes = []
@@ -33,7 +32,7 @@ class Dijkstra:
         dist = dict()
         prev = dict()
         for n in nodes:
-            dist[n] = float('inf')
+            dist[n] = float("inf")
             prev[n] = None
 
         dist[src] = 0
@@ -48,7 +47,6 @@ class Dijkstra:
                     dist[v] = alt
                     prev[v] = u
         return dist, prev
-
 
     def find_path(self, pr, node):
         """ generate path list based on parent points 'prev' """
@@ -71,7 +69,7 @@ if __name__ == "__main__":
         ("D", "F", 6),
         ("E", "F", 8),
         ("E", "G", 9),
-        ("F", "G", 11)
+        ("F", "G", 11),
     ]
 
     dijkstra = Dijkstra(edges)
