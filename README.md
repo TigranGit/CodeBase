@@ -9,6 +9,10 @@ DataStructures
 ---
 Data structures in C++.
 
+DesignPatterns
+---
+Design Patterns in python.
+
 # Travis CI
 Automated tests are running after every push/PR
 
