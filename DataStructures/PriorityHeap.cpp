@@ -31,11 +31,13 @@ PQueue::PQueue() {
 }
 
 void PQueue::init(int size) {
+    // initialize the array
     length = size - 1;
     data = new int[2 * size];
 }
 
 void PQueue::max_heapify(int i) {
+    // heapify function
     int l = LEFT(i);
     int r = RIGHT(i);
     int largest = i;
@@ -56,12 +58,14 @@ void PQueue::max_heapify(int i) {
 }
 
 void PQueue::build_max_heap() {
+    // print queue elements
     for (int i = PARENT(length); i >= 0; i--) {
         max_heapify(i);
     }
 }
 
 void PQueue::display() {
+    // print queue elements
     if (length < 1) {
         cout << "no elements" << endl;
     } else {
@@ -73,10 +77,12 @@ void PQueue::display() {
 }
 
 int PQueue::get_maximum() {
+    // get the max key
     return data[0];
 }
 
 int PQueue::extract_max() {
+    // extract the max key, will be removed
     int m = data[0];
     data[0] = data[length];
     length--;
@@ -85,6 +91,7 @@ int PQueue::extract_max() {
 }
 
 void PQueue::increase_key(int i, int key) {
+    // increase key's value by pos
     if (data[i] > key) {
         cout << "error: new key is smaller than current key" << endl;
     } else {
@@ -99,6 +106,7 @@ void PQueue::increase_key(int i, int key) {
 }
 
 void PQueue::insert(int key) {
+    // insert new key
     length++;
     data[length] = -INF;
     increase_key(length, key);
