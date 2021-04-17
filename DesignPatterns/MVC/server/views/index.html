@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }} - MVC</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+
+<body>
+  <div>
+    <a class="col-md-6 text-center pl-2 pt-2" href="registration">Registration</a>
+    <a class="col-md-6 text-center" href="admin">Administrator</a>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-center">Welcome to MVC</h1>
+        <h3 class="text-center">Hello, your IP is {{ user_ip }}</h3>
+        <h4 class="text-center">Connected port: {{ user_port }}</h4>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</html>

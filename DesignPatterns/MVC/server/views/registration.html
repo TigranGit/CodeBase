@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }} - MVC</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="static/styles/registration.css" rel="stylesheet">
+</head>
+
+<body>
+  <div>
+    <a class="col-md-6 text-center" href="/">Home</a>
+    <a class="col-md-6 text-center" href="/admin">Administrator</a>
+  </div>
+  <div class="container register-form">
+    <div class="alert alert-success" role="alert" style="visibility: {{ success_visibility }}">
+      {{ name }}, you have successfully registered!
+    </div>
+    <div class="alert alert-danger" role="alert" style="visibility: {{ error_visibility }}">
+      Please fix the following issue and try again:
+      </br>
+      {{ error }}
+    </div>
+    <div class="form">
+      <form id="registration" method="POST" class="form-horizontal">
+        <div class="form-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" name="firstname" placeholder="First Name *" value="" />
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="lastname" placeholder="Last Name *" value="" />
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email *" value="" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password *" value="" />
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" id="btnSubmit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- <script>
+  $(document).ready(function () {
+    $("#btnSubmit").click(function () {
+      var postdata = $("#registration").serialize();
+      $.post("registration", postdata, function (response) {
+        alert(response.message);
+      });
+    });
+  });
+</script> -->
+
+</html>
